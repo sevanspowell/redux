@@ -17,11 +17,11 @@ To use it together with [Babel](http://babeljs.io), you will need to install `ba
 npm install --save-dev babel-jest
 ```
 
-and configure it to use ES2015 features in `.babelrc`:
+and configure it to use [babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env) features in `.babelrc`:
 
 ```js
 {
-  "presets": ["es2015"]
+   "presets": ["@babel/preset-env"]
 }
 ```
 
@@ -437,7 +437,7 @@ const create = () => {
 We test that our middleware is calling the `getState`, `dispatch`, and `next` functions at the right time.
 
 ```js
-it(`passes through non-function action`, () => {
+it('passes through non-function action', () => {
   const { next, invoke } = create()
   const action = {type: 'TEST'}
   invoke(action)
